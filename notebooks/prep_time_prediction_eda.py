@@ -240,15 +240,15 @@ data_train,data_test = split_train_test(data_transformed, split_perc)
 # - decide as a team and push models to prod
 # 
 
-# In[4]:
+# In[23]:
 
 
-get_ipython().system(' pip install /Users/jyotirmoysundi/Downloads/chaya_ai-0.0.1.tar.gz')
+get_ipython().system(' pip install /Users/jyotirmoysundi/git/distml_logger/dist/chaya_ai-0.0.1.tar.gz')
 
 #/Users/jyotirmoysundi/git/distml_logger/dist/chaya_ai-0.0.1.tar.gz
 
 
-# In[10]:
+# In[27]:
 
 
 
@@ -259,13 +259,16 @@ cai = tracker() # increase collaboration and precise feedback
 cai.setup(config="/Users/jyotirmoysundi/Downloads/distml.json", project_name="your_p1",           track={"start_tag":{"keywords":"start|train"},"end_tag":{"metrics":"rmse|mae"}})
 
 
-# In[ ]:
+# In[31]:
 
 
+import inspect
+from sklearn import tree
+inspect.getsourcelines(cai.save_model)
+                       
 
 
-
-# In[11]:
+# In[14]:
 
 
 import lightgbm as lgb
@@ -331,11 +334,11 @@ plt.savefig('feature_importance_qr_0.95.png')
 cai.saveplot("feature_importance_qr_0.95.png")
 
 
-# In[11]:
+# In[25]:
 
 
 model_cb.save_model("model_cb")
-cai.save_model("model_cb")
+cai.savemodel("model_cb")
 
 
 # In[7]:
@@ -344,10 +347,10 @@ cai.save_model("model_cb")
 model.booster_.save_model('lgbmmodel')
 
 
-# In[12]:
+# In[30]:
 
 
-cai.savemodel("lgbmmodel")
+cai.save_model("lgbmmodel")
 
 
 # In[ ]:
