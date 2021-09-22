@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[14]:
+# In[1]:
 
 
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
@@ -22,7 +22,7 @@ import numpy as np
 data = pd.read_json('orders.json')
 
 
-# In[15]:
+# In[2]:
 
 
 
@@ -123,7 +123,7 @@ def train_model(data_train, data_test):
     return model,rmse_error,mae_error
 
 
-# In[16]:
+# In[3]:
 
 
 from sklearn import preprocessing
@@ -240,7 +240,7 @@ data_train,data_test = split_train_test(data_transformed, split_perc)
 # - decide as a team and push models to prod
 # 
 
-# In[20]:
+# In[4]:
 
 
 get_ipython().system(' pip install /Users/jyotirmoysundi/Downloads/chaya_ai-0.0.1.tar.gz')
@@ -248,7 +248,7 @@ get_ipython().system(' pip install /Users/jyotirmoysundi/Downloads/chaya_ai-0.0.
 #/Users/jyotirmoysundi/git/distml_logger/dist/chaya_ai-0.0.1.tar.gz
 
 
-# In[21]:
+# In[10]:
 
 
 
@@ -256,18 +256,16 @@ from chaya_ai.chaya_ai import tracker
 
 cai = tracker() # increase collaboration and precise feedback
 
-cai.setup(config="/Users/jyotirmoysundi/Downloads/distml.json", project_name="demo-pot-2",           track={"start_tag":{"keywords":"start|train"},"end_tag":{"metrics":"rmse|mae"}})
+cai.setup(config="/Users/jyotirmoysundi/Downloads/distml.json", project_name="your_p1",           track={"start_tag":{"keywords":"start|train"},"end_tag":{"metrics":"rmse|mae"}})
 
 
-# In[13]:
+# In[ ]:
 
 
-import inspect
-from sklearn import tree
-inspect.getsourcelines(cai.setup) 
 
 
-# In[7]:
+
+# In[11]:
 
 
 import lightgbm as lgb
@@ -340,16 +338,16 @@ model_cb.save_model("model_cb")
 cai.save_model("model_cb")
 
 
-# In[8]:
+# In[7]:
 
 
 model.booster_.save_model('lgbmmodel')
 
 
-# In[15]:
+# In[12]:
 
 
-cai.save_model("lgbmmodel")
+cai.savemodel("lgbmmodel")
 
 
 # In[ ]:
