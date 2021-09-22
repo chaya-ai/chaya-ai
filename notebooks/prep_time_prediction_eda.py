@@ -240,7 +240,7 @@ data_train,data_test = split_train_test(data_transformed, split_perc)
 # - decide as a team and push models to prod
 # 
 
-# In[23]:
+# In[4]:
 
 
 get_ipython().system(' pip install /Users/jyotirmoysundi/git/distml_logger/dist/chaya_ai-0.0.1.tar.gz')
@@ -248,7 +248,7 @@ get_ipython().system(' pip install /Users/jyotirmoysundi/git/distml_logger/dist/
 #/Users/jyotirmoysundi/git/distml_logger/dist/chaya_ai-0.0.1.tar.gz
 
 
-# In[27]:
+# In[5]:
 
 
 
@@ -259,7 +259,7 @@ cai = tracker() # increase collaboration and precise feedback
 cai.setup(config="/Users/jyotirmoysundi/Downloads/distml.json", project_name="your_p1",           track={"start_tag":{"keywords":"start|train"},"end_tag":{"metrics":"rmse|mae"}})
 
 
-# In[31]:
+# In[6]:
 
 
 import inspect
@@ -268,7 +268,7 @@ inspect.getsourcelines(cai.save_model)
                        
 
 
-# In[14]:
+# In[7]:
 
 
 import lightgbm as lgb
@@ -334,7 +334,7 @@ plt.savefig('feature_importance_qr_0.95.png')
 cai.saveplot("feature_importance_qr_0.95.png")
 
 
-# In[25]:
+# In[8]:
 
 
 model_cb.save_model("model_cb")
