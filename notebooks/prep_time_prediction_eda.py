@@ -248,7 +248,7 @@ get_ipython().system(' pip install /Users/jyotirmoysundi/git/distml_logger/dist/
 #/Users/jyotirmoysundi/git/distml_logger/dist/chaya_ai-0.0.1.tar.gz
 
 
-# In[5]:
+# In[9]:
 
 
 
@@ -259,7 +259,7 @@ cai = tracker() # increase collaboration and precise feedback
 cai.setup(config="/Users/jyotirmoysundi/Downloads/distml.json", project_name="your_p1",           track={"start_tag":{"keywords":"start|train"},"end_tag":{"metrics":"rmse|mae"}})
 
 
-# In[6]:
+# In[10]:
 
 
 import inspect
@@ -268,7 +268,7 @@ inspect.getsourcelines(cai.save_model)
                        
 
 
-# In[7]:
+# In[11]:
 
 
 import lightgbm as lgb
@@ -334,20 +334,20 @@ plt.savefig('feature_importance_qr_0.95.png')
 cai.saveplot("feature_importance_qr_0.95.png")
 
 
-# In[8]:
+# In[18]:
 
 
 model_cb.save_model("model_cb")
-cai.savemodel("model_cb")
+cai.save_model("model_cb")
 
 
-# In[7]:
+# In[14]:
 
 
 model.booster_.save_model('lgbmmodel')
 
 
-# In[30]:
+# In[17]:
 
 
 cai.save_model("lgbmmodel")
